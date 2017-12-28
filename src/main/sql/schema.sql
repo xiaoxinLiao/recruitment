@@ -32,7 +32,7 @@ CREATE TABLE enterprise(
   `tel` BIGINT COMMENT '联系方式',
   `syn` TEXT COMMENT  '公司基本简介',
   `type` TINYINT DEFAULT 0 COMMENT '公司性质',
- PRIMARY KEY (candidate_id)
+ PRIMARY KEY (enterprise_id)
 )DEFAULT CHARSET=utf8 COMMENT='企业用户表';
 
 
@@ -53,12 +53,12 @@ CREATE TABLE resume(
   `candidate_id` bigint NOT NULL  COMMENT '主外键普通用户表id',
   `name`  VARCHAR(20) NOT NULL COMMENT '姓名',
   `sex` TINYINT NOT NULL COMMENT '性别(0:男,1:女)',
-  `date` TIMESTAMP NOT NULL  COMMENT '出生日期',
+  `date` DATE NOT NULL  COMMENT '出生日期',
   `add` VARCHAR(50) NOT NULL COMMENT '居住地',
   `edu` TINYINT NOT NULL COMMENT '学历',
   `tel` BIGINT  NOT NULL COMMENT '手机',
   `sch` TEXT  NOT NULL COMMENT '毕业学校',
-  `year` TIMESTAMP NOT NULL COMMENT '毕业年份',
+  `year` DATE NOT NULL COMMENT '毕业年份',
   `major` VARCHAR(20) NOT NULL COMMENT '专业',
   `des` TEXT NOT NULL COMMENT  '工作经验描述',
   PRIMARY KEY (candidate_id)
@@ -77,7 +77,7 @@ CREATE TABLE resume(
 --  职位描述  DES
 --  工作地点  ADD
 CREATE TABLE job(
-  `job_id` bigint NOT NULL  COMMENT '招聘信息表id',
+  `job_id` bigint NOT NULL AUTO_INCREMENT COMMENT '招聘信息表id',
   `enterprise_id` bigint NOT NULL COMMENT '关联企业用户表id',
   `exp`  VARCHAR(100) NOT NULL COMMENT '工作经验要求',
   `edu` TINYINT NOT NULL COMMENT '学历要求',
