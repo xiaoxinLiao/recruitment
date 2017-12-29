@@ -26,4 +26,6 @@ public class Candidate extends User {
     public void setCandidateId(long candidateId) {
         this.candidateId = candidateId;
     }
+
+
 }

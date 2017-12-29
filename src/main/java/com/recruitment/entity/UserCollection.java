@@ -5,7 +5,7 @@ package com.recruitment.entity;
  * @author xiaoxinliao
  * @date 2017/12/28 21:35
  */
-public class Collection {
+public class UserCollection {
 
     /**
      * 普通用户id
@@ -44,11 +44,11 @@ public class Collection {
         this.state = state;
     }
 
-    public Collection() {
+    public UserCollection() {
 
     }
 
-    public Collection(long candidateId, long jobId, short state) {
+    public UserCollection(long candidateId, long jobId, short state) {
         this.candidateId = candidateId;
         this.jobId = jobId;
         this.state = state;

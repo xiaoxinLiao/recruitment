@@ -19,6 +19,9 @@ public class User {
      */
     private String password;
 
+    /**
+     * 邮箱
+     */
     private String email;
 
     public User() {
@@ -52,5 +55,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
