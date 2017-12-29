@@ -5,6 +5,7 @@
 # IntelliJ project files
 .idea
 *.iml
+
 build/    # 忽略 build/ 目录下的所有文件
 out
 gen
