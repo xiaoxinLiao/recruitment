@@ -6,4 +6,5 @@ package com.recruitment.dao;
  */
 public interface EnterpriseDao {
 
+
 }
