@@ -20,23 +20,23 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring/spring-dao.xml",
         "classpath:spring/spring-service.xml"})
-public class CandidateServiceTest {
+public class CandidateServiceImplTest {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
-    private CandidateService candidateService;
+    private CandidateServiceImpl candidateService;
 
     @Test
-    public void queryCandidate() throws Exception {
-        Candidate candidate = candidateService.queryCandidate("", "1");
+    public void checkIdentity() throws Exception {
+        Candidate candidate = candidateService.checkIdentity("", "1");
 
         assertEquals(null, candidate);
 
     }
 
     @Test
-    public void addCandidate() throws Exception {
-        int count = candidateService.addCandidate(new Candidate("12","12","1"));
+    public void add() throws Exception {
+        int count = candidateService.add(new Candidate("12","12","1"));
         assertEquals(1,count );
     }
 

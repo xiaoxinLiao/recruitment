@@ -72,12 +72,6 @@ public class Enterprise extends User {
         super();
     }
 
-    public Enterprise(String address, long tel, String syn, short type) {
-        this.address = address;
-        this.tel = tel;
-        this.syn = syn;
-        this.type = type;
-    }
 
     public Enterprise(String userName, String password, String email, String address, long tel, String syn, short type) {
         super(userName, password, email);
@@ -85,5 +79,17 @@ public class Enterprise extends User {
         this.tel = tel;
         this.syn = syn;
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Enterprise{" +
+                "enterpriseId=" + enterpriseId +
+                "," + super.toString() +
+                ", address='" + address + '\'' +
+                ", tel=" + tel +
+                ", syn='" + syn + '\'' +
+                ", type=" + type +
+                '}';
     }
 }

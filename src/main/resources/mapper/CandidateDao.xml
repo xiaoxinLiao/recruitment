@@ -7,7 +7,7 @@
     <sql id="columns">username,password,email</sql>
     <sql id="allColumns">candidate_id,username,password,email</sql>
 
-    <insert id="addCandidate">
+    <insert id="add">
         INSERT INTO candidate(
         <include refid="columns"/>
         )
@@ -27,7 +27,7 @@
         WHERE username = #{userName}
     </select>
     <!--检查用户密码-->
-    <select id="queryCandidate" resultType="Candidate">
+    <select id="checkIdentity" resultType="Candidate">
         SELECT
         <include refid="allColumns"/>
         FROM candidate

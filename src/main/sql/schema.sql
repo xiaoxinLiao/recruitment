@@ -26,7 +26,7 @@ CREATE TABLE candidate(
 CREATE TABLE enterprise(
  `enterprise_id` bigint NOT NULL AUTO_INCREMENT COMMENT '企业用户表id',
  `username`  VARCHAR(20) NOT NULL COMMENT '姓名',
- `passsword` VARCHAR(50) NOT NULL COMMENT '密码',
+ `password` VARCHAR(50) NOT NULL COMMENT '密码',
  `email` VARCHAR(50) NOT NULL   COMMENT '邮箱',
   `address` VARCHAR(50) COMMENT '地址',
   `tel` BIGINT COMMENT '联系方式',

@@ -18,7 +18,7 @@ public interface ICandidateService {
      * @param password
      * @return
      */
-    Candidate queryCandidate(String userName, String password);
+    Candidate checkIdentity(String userName, String password);
 
     /**
      * 注册用户
@@ -26,7 +26,7 @@ public interface ICandidateService {
      * @param candidate
      * @return
      */
-    int addCandidate(Candidate candidate);
+    int add(Candidate candidate);
 
     /**
      * 根据姓名查询

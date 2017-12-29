@@ -1,6 +1,6 @@
 package com.recruitment.dao;
 
-import com.recruitment.entity.Candidate;
+import com.recruitment.entity.Enterprise;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -11,24 +11,23 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-
 /**
  * @author xiaoxinliao
- * @date 2017/12/29 11:23
+ * @date 2017/12/29 16:42
  */
 @ContextConfiguration({"classpath:spring/spring-dao.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-public class CandidateDaoTest {
-
+public class EnterpriseDaoTest {
 
     @Autowired
-    private CandidateDao candidateDao;
-
+    private EnterpriseDao enterpriseDao;
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Test
     public void add() throws Exception {
-        int count = candidateDao.add(new Candidate("test1", "test", "@qq.com"));
+        int count = enterpriseDao.add(
+                new Enterprise("test1", "test",
+                        "@qq.com","",137,"",(short)1));
         if (count > 0) {
             logger.info("count={}", count);
         } else {
@@ -38,22 +37,22 @@ public class CandidateDaoTest {
 
     @Test
     public void queryByName() throws Exception {
-        Candidate candidate = candidateDao.queryByName("1");
-        logger.info("Candidate={}", candidate);
+        Enterprise enterprise = enterpriseDao.queryByName("ent");
+        logger.info("Enterprise={}", enterprise);
     }
 
     @Test
     public void queryAll() throws Exception {
-        List<Candidate> candidateList = candidateDao.queryAll();
-        logger.info("lenght={}",candidateList.size());
-        logger.info("List<Candidate>={}",candidateList);
+        List<Enterprise> enterpriseList = enterpriseDao.queryAll();
+        logger.info("lenght={}",enterpriseList.size());
+        logger.info("List<Enterprise>={}",enterpriseList);
 
     }
 
     @Test
     public void checkIdentity() throws Exception {
-        Candidate candidate = candidateDao.checkIdentity("1","test");
-        logger.info("checkIdentity:Candidate={}", candidate);
+        Enterprise enterprise = enterpriseDao.checkIdentity("ent","ent");
+        logger.info("checkIdentity:Enterprise={}", enterprise);
     }
 
 
