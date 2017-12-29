@@ -27,5 +27,11 @@ public class Candidate extends User {
         this.candidateId = candidateId;
     }
 
-
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "candidateId=" + candidateId +
+                "," + super.toString() +
+                '}';
+    }
 }
