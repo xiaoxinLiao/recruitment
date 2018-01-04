@@ -1,6 +1,7 @@
 package com.recruitment.service.impl;
 
 import com.recruitment.dao.CandidateDao;
+import com.recruitment.dao.ResumeDao;
 import com.recruitment.entity.Candidate;
 import com.recruitment.service.ICandidateService;
 import com.recruitment.utils.MyStringUtil;
@@ -8,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +26,9 @@ public class CandidateServiceImpl implements ICandidateService {
 
     @Autowired
     private CandidateDao candidateDao;
+
+    @Autowired
+    private ResumeDao resumeDao;
 
 
     /**
@@ -47,6 +52,7 @@ public class CandidateServiceImpl implements ICandidateService {
      * @param candidate Candidate
      * @return 0:失败 1： 成功
      */
+
     public int add(Candidate candidate) {
         String userName = candidate.getUserName();
         String password = candidate.getPassword();
@@ -59,7 +65,13 @@ public class CandidateServiceImpl implements ICandidateService {
             logger.error("用户已存在");
             return 0;
         }
-        return candidateDao.add(candidate);
+        int count  = candidateDao.add(candidate);
+        if(count>0){
+            Candidate c = candidateDao.queryByName(userName);
+            resumeDao.add(c.getCandidateId(),c.getUserName(),c.getEmail());
+        }
+
+        return count;
     }
 
     /**

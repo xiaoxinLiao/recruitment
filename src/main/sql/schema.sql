@@ -53,8 +53,8 @@ CREATE TABLE resume(
   `candidate_id` bigint NOT NULL  COMMENT '主外键普通用户表id',
   `name`  VARCHAR(20) NOT NULL COMMENT '姓名',
   `sex` TINYINT NOT NULL COMMENT '性别(0:男,1:女)',
-  `date` DATE NOT NULL  COMMENT '出生日期',
-  `add` VARCHAR(50) NOT NULL COMMENT '居住地',
+  `birthday` DATE NOT NULL  COMMENT '出生日期',
+  `email` VARCHAR(50) NOT NULL COMMENT '居住地',
   `edu` TINYINT NOT NULL COMMENT '学历',
   `tel` BIGINT  NOT NULL COMMENT '手机',
   `sch` TEXT  NOT NULL COMMENT '毕业学校',
@@ -82,12 +82,12 @@ CREATE TABLE job(
   `exp`  VARCHAR(100) NOT NULL COMMENT '工作经验要求',
   `edu` TINYINT NOT NULL COMMENT '学历要求',
   `num` INT NOT NULL  COMMENT '待招人数',
-  `date` TIMESTAMP  DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间',
+  `birthday` TIMESTAMP  DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间',
   `sal` DOUBLE  NOT NULL COMMENT '薪资',
   `wel` TEXT  COMMENT '福利',
   `position` VARCHAR(20) NOT NULL COMMENT '职位',
   `des` TEXT NOT NULL COMMENT  '职位描述',
-  `add` VARCHAR(50) NOT NULL COMMENT '工作地点',
+  `email` VARCHAR(50) NOT NULL COMMENT '工作地点',
   PRIMARY KEY (job_id)
 )DEFAULT CHARSET=utf8 COMMENT='招聘信息表';
 

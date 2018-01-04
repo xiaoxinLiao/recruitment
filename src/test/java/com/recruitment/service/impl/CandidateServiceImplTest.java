@@ -36,7 +36,7 @@ public class CandidateServiceImplTest {
 
     @Test
     public void add() throws Exception {
-        int count = candidateService.add(new Candidate("12","12","1"));
+        int count = candidateService.add(new Candidate("TEST222","12","1"));
         assertEquals(1,count );
     }
 

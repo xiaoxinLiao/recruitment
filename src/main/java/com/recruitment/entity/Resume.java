@@ -27,12 +27,12 @@ public class Resume {
     /**
      * 出生日期
      */
-    private Date date;
+    private Date birthday;
 
     /**
      * 居住地
      */
-    private String add;
+    private String email;
 
     /**
      * 学历
@@ -59,13 +59,25 @@ public class Resume {
      */
     private String des;
 
-    public Resume(String name, short sex, Date date,
-                  String add, short edu, long tel, String sch,
-                  Date year, String major, String des) {
+    public Resume(long candidateId, String name, short sex, Date birthday, String email, short edu, long tel, String sch, Date year, String major, String des) {
+        this.candidateId = candidateId;
         this.name = name;
         this.sex = sex;
-        this.date = date;
-        this.add = add;
+        this.birthday = birthday;
+        this.email = email;
+        this.edu = edu;
+        this.tel = tel;
+        this.sch = sch;
+        this.year = year;
+        this.major = major;
+        this.des = des;
+    }
+    public Resume(String name, short sex, Date birthday, String email, short edu, long tel, String sch, Date year, String major, String des) {
+
+        this.name = name;
+        this.sex = sex;
+        this.birthday = birthday;
+        this.email = email;
         this.edu = edu;
         this.tel = tel;
         this.sch = sch;
@@ -101,20 +113,20 @@ public class Resume {
         this.sex = sex;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
-    public String getAdd() {
-        return add;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAdd(String add) {
-        this.add = add;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public short getEdu() {
